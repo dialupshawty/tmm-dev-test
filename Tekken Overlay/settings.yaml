@@ -1,0 +1,961 @@
+defaultFontSize: 20
+nameChanger:
+  enabled: false
+frameNumbers:
+  isEnabled: true
+  numberToShowOnConnect: 0
+  numberToShowOnWhiff: 0
+  baseStyle:
+    visible: true
+    size: 30
+    duration: 0.75
+    horizontalPosition: 15
+    verticalPosition: 30
+    textColor:
+      r: 1
+      g: 1
+      b: 1
+      a: 1
+    shadowColor:
+      r: 0
+      g: 0
+      b: 0
+      a: 1
+  conditionalStyles:
+    - conditions:
+        numberGraterOrEqual:
+          isUsed: false
+          value: 0
+        numberLessOrEqual:
+          isUsed: true
+          value: -15
+        attackType:
+          isUsed: false
+          value: -2147483126
+        isWhiff:
+          isUsed: true
+          value: false
+        isMental:
+          isUsed: false
+          value: false
+        isPlayer2Attacking:
+          isUsed: false
+          value: false
+      modifications:
+        visible:
+          isUsed: false
+          value: true
+        sizeScale:
+          isUsed: true
+          value: 160
+        durationScale:
+          isUsed: false
+          value: 100
+        horizontalPosition:
+          isUsed: false
+          value: 15
+        verticalPosition:
+          isUsed: false
+          value: 30
+        textColor:
+          isUsed: true
+          value:
+            r: 0
+            g: 0
+            b: 0
+            a: 1
+        textOpacity:
+          isUsed: false
+          value: 255
+        shadowColor:
+          isUsed: true
+          value:
+            r: 1
+            g: 0
+            b: 1
+            a: 1
+        shadowOpacity:
+          isUsed: false
+          value: 255
+    - conditions:
+        numberGraterOrEqual:
+          isUsed: true
+          value: -14
+        numberLessOrEqual:
+          isUsed: true
+          value: -10
+        attackType:
+          isUsed: false
+          value: -2147483126
+        isWhiff:
+          isUsed: true
+          value: false
+        isMental:
+          isUsed: false
+          value: false
+        isPlayer2Attacking:
+          isUsed: false
+          value: false
+      modifications:
+        visible:
+          isUsed: false
+          value: true
+        sizeScale:
+          isUsed: true
+          value: 130
+        durationScale:
+          isUsed: false
+          value: 100
+        horizontalPosition:
+          isUsed: false
+          value: 15
+        verticalPosition:
+          isUsed: false
+          value: 30
+        textColor:
+          isUsed: true
+          value:
+            r: 1
+            g: 0
+            b: 0
+            a: 1
+        textOpacity:
+          isUsed: false
+          value: 255
+        shadowColor:
+          isUsed: true
+          value:
+            r: 0
+            g: 0
+            b: 0
+            a: 1
+        shadowOpacity:
+          isUsed: false
+          value: 255
+    - conditions:
+        numberGraterOrEqual:
+          isUsed: true
+          value: -9
+        numberLessOrEqual:
+          isUsed: true
+          value: 0
+        attackType:
+          isUsed: false
+          value: -2147483126
+        isWhiff:
+          isUsed: true
+          value: false
+        isMental:
+          isUsed: false
+          value: false
+        isPlayer2Attacking:
+          isUsed: false
+          value: false
+      modifications:
+        visible:
+          isUsed: false
+          value: true
+        sizeScale:
+          isUsed: true
+          value: 100
+        durationScale:
+          isUsed: false
+          value: 100
+        horizontalPosition:
+          isUsed: false
+          value: 15
+        verticalPosition:
+          isUsed: false
+          value: 30
+        textColor:
+          isUsed: true
+          value:
+            r: 1
+            g: 1
+            b: 1
+            a: 1
+        textOpacity:
+          isUsed: false
+          value: 255
+        shadowColor:
+          isUsed: true
+          value:
+            r: 0
+            g: 0
+            b: 0
+            a: 1
+        shadowOpacity:
+          isUsed: false
+          value: 255
+    - conditions:
+        numberGraterOrEqual:
+          isUsed: true
+          value: 1
+        numberLessOrEqual:
+          isUsed: true
+          value: 15
+        attackType:
+          isUsed: false
+          value: -2147483126
+        isWhiff:
+          isUsed: true
+          value: false
+        isMental:
+          isUsed: false
+          value: false
+        isPlayer2Attacking:
+          isUsed: false
+          value: false
+      modifications:
+        visible:
+          isUsed: false
+          value: true
+        sizeScale:
+          isUsed: true
+          value: 100
+        durationScale:
+          isUsed: false
+          value: 100
+        horizontalPosition:
+          isUsed: false
+          value: 15
+        verticalPosition:
+          isUsed: false
+          value: 30
+        textColor:
+          isUsed: true
+          value:
+            r: 0
+            g: 1
+            b: 0
+            a: 1
+        textOpacity:
+          isUsed: false
+          value: 255
+        shadowColor:
+          isUsed: true
+          value:
+            r: 0
+            g: 0
+            b: 0
+            a: 1
+        shadowOpacity:
+          isUsed: false
+          value: 255
+    - conditions:
+        numberGraterOrEqual:
+          isUsed: false
+          value: 0
+        numberLessOrEqual:
+          isUsed: false
+          value: 0
+        attackType:
+          isUsed: false
+          value: -2147483126
+        isWhiff:
+          isUsed: true
+          value: true
+        isMental:
+          isUsed: false
+          value: false
+        isPlayer2Attacking:
+          isUsed: false
+          value: false
+      modifications:
+        visible:
+          isUsed: false
+          value: true
+        sizeScale:
+          isUsed: true
+          value: 50
+        durationScale:
+          isUsed: false
+          value: 100
+        horizontalPosition:
+          isUsed: false
+          value: 15
+        verticalPosition:
+          isUsed: false
+          value: 30
+        textColor:
+          isUsed: true
+          value:
+            r: 1
+            g: 1
+            b: 1
+            a: 1
+        textOpacity:
+          isUsed: false
+          value: 255
+        shadowColor:
+          isUsed: true
+          value:
+            r: 0
+            g: 0
+            b: 0
+            a: 1
+        shadowOpacity:
+          isUsed: false
+          value: 255
+throwTech:
+  isEnabled: true
+  success:
+    isEnabled: true
+    textSize: 12
+    backgroundColor:
+      r: 0
+      g: 1
+      b: 0
+      a: 0.150000006
+    textColor:
+      r: 1
+      g: 1
+      b: 1
+      a: 1
+    minDuration: 0.5
+    maxDuration: 1
+  fail:
+    isEnabled: true
+    textSize: 12
+    backgroundColor:
+      r: 1
+      g: 0
+      b: 0
+      a: 0.150000006
+    textColor:
+      r: 1
+      g: 1
+      b: 1
+      a: 1
+    minDuration: 0.5
+    maxDuration: 1
+hitboxes:
+  isEnabled: false
+  player1:
+    showHurtSpheres: true
+    hurtCylinderColor:
+      r: 0.159999996
+      g: 0.159999996
+      b: 0.159999996
+      a: 1
+    showCollisionSpheres: false
+    collisionSphereColor:
+      r: 0
+      g: 0
+      b: 0.400000006
+      a: 1
+    showLingeringHits: true
+    lingeringHitColor:
+      r: 0
+      g: 0.600000024
+      b: 0
+      a: 1
+    showDetectedHits: true
+    detectedHitColor:
+      r: 0.600000024
+      g: 0.600000024
+      b: 0
+      a: 1
+    showHitLines: true
+    hitLineColor:
+      r: 1
+      g: 0
+      b: 0
+      a: 1
+  usePlayer2: false
+  player2:
+    showHurtSpheres: true
+    hurtCylinderColor:
+      r: 0.159999996
+      g: 0.159999996
+      b: 0.159999996
+      a: 1
+    showCollisionSpheres: false
+    collisionSphereColor:
+      r: 0
+      g: 0
+      b: 0.400000006
+      a: 1
+    showLingeringHits: true
+    lingeringHitColor:
+      r: 0
+      g: 0.600000024
+      b: 0
+      a: 1
+    showDetectedHits: true
+    detectedHitColor:
+      r: 0.600000024
+      g: 0.600000024
+      b: 0
+      a: 1
+    showHitLines: true
+    hitLineColor:
+      r: 1
+      g: 0
+      b: 0
+      a: 1
+gameInformation:
+  isEnabled: true
+  player1Health:
+    isEnabled: false
+    position:
+      x: 43.5
+      y: 7
+    horizontalAlignment: 2
+    verticalAlignment: 0
+    textScale: 100
+    textColor:
+      r: 1
+      g: 1
+      b: 1
+      a: 1
+    shadowColor:
+      r: 0
+      g: 0
+      b: 0
+      a: 1
+    conditionalColors:
+      []
+  player2Health:
+    isEnabled: false
+    position:
+      x: 56.5
+      y: 7
+    horizontalAlignment: 0
+    verticalAlignment: 0
+    textScale: 100
+    textColor:
+      r: 1
+      g: 1
+      b: 1
+      a: 1
+    shadowColor:
+      r: 0
+      g: 0
+      b: 0
+      a: 1
+    conditionalColors:
+      []
+  distance:
+    isEnabled: false
+    position:
+      x: 50
+      y: 13.5
+    horizontalAlignment: 1
+    verticalAlignment: 2
+    textScale: 100
+    textColor:
+      r: 1
+      g: 1
+      b: 1
+      a: 1
+    shadowColor:
+      r: 0
+      g: 0
+      b: 0
+      a: 1
+    conditionalColors:
+      []
+  onlineLag:
+    isEnabled: true
+    position:
+      x: 99.8000031
+      y: 83.9000015
+    horizontalAlignment: 2
+    verticalAlignment: 2
+    textScale: 100
+    textColor:
+      r: 1
+      g: 1
+      b: 1
+      a: 1
+    shadowColor:
+      r: 0
+      g: 0
+      b: 0
+      a: 1
+    conditionalColors:
+      []
+  barsPing:
+    isEnabled: true
+    position:
+      x: 97.8000031
+      y: 83.9000015
+    horizontalAlignment: 2
+    verticalAlignment: 2
+    textScale: 100
+    textColor:
+      r: 1
+      g: 1
+      b: 1
+      a: 1
+    shadowColor:
+      r: 0
+      g: 0
+      b: 0
+      a: 1
+    conditionalColors:
+      []
+  lastPing:
+    isEnabled: true
+    position:
+      x: 97.9000015
+      y: 88.4000015
+    horizontalAlignment: 2
+    verticalAlignment: 2
+    textScale: 100
+    textColor:
+      r: 1
+      g: 1
+      b: 1
+      a: 1
+    shadowColor:
+      r: 0
+      g: 0
+      b: 0
+      a: 1
+    conditionalColors:
+      []
+  frameCount:
+    isEnabled: false
+    position:
+      x: 1
+      y: 1
+    horizontalAlignment: 0
+    verticalAlignment: 2
+    textScale: 100
+    textColor:
+      r: 1
+      g: 1
+      b: 1
+      a: 1
+    shadowColor:
+      r: 0
+      g: 0
+      b: 0
+      a: 1
+    conditionalColors:
+      []
+  leftPlayerPosition:
+    isEnabled: false
+    position:
+      x: 0.200000003
+      y: 0.200000003
+    horizontalAlignment: 0
+    verticalAlignment: 2
+    textScale: 10
+    textColor:
+      r: 1
+      g: 1
+      b: 1
+      a: 1
+    shadowColor:
+      r: 0
+      g: 0
+      b: 0
+      a: 1
+    conditionalColors:
+      []
+  rightPlayerPosition:
+    isEnabled: false
+    position:
+      x: 99.8000031
+      y: 0.200000003
+    horizontalAlignment: 2
+    verticalAlignment: 2
+    textScale: 10
+    textColor:
+      r: 1
+      g: 1
+      b: 1
+      a: 1
+    shadowColor:
+      r: 0
+      g: 0
+      b: 0
+      a: 1
+    conditionalColors:
+      []
+graphs:
+  isEnabled: false
+  frameTime:
+    isEnabled: true
+    position:
+      x: 90
+      y: 60
+    size:
+      x: 10
+      y: 18
+    minValue: 0
+    maxValue: 50
+    frameBackgroundColor:
+      r: 0
+      g: 0
+      b: 0
+      a: 0.100000001
+    plotBackgroundColor:
+      r: 0
+      g: 0
+      b: 0
+      a: 0.400000006
+    lineColor:
+      r: 0
+      g: 1
+      b: 0
+      a: 1
+    textColor:
+      r: 1
+      g: 1
+      b: 1
+      a: 1
+    antialiasing: true
+    showTextValue: true
+  ping:
+    isEnabled: true
+    position:
+      x: 78
+      y: 80.8000031
+    size:
+      x: 14
+      y: 18
+    minValue: 0
+    maxValue: 300
+    frameBackgroundColor:
+      r: 0
+      g: 0
+      b: 0
+      a: 0.100000001
+    plotBackgroundColor:
+      r: 0
+      g: 0
+      b: 0
+      a: 0.400000006
+    lineColor:
+      r: 0
+      g: 1
+      b: 0
+      a: 1
+    textColor:
+      r: 1
+      g: 1
+      b: 1
+      a: 1
+    antialiasing: true
+    showTextValue: true
+  player1Speed:
+    isEnabled: false
+    position:
+      x: 28
+      y: 82
+    size:
+      x: 10
+      y: 18
+    minValue: 0
+    maxValue: 20
+    frameBackgroundColor:
+      r: 0
+      g: 0
+      b: 0
+      a: 0.100000001
+    plotBackgroundColor:
+      r: 0
+      g: 0
+      b: 0
+      a: 0.400000006
+    lineColor:
+      r: 0
+      g: 1
+      b: 0
+      a: 1
+    textColor:
+      r: 1
+      g: 1
+      b: 1
+      a: 1
+    antialiasing: true
+    showTextValue: true
+  player2Speed:
+    isEnabled: false
+    position:
+      x: 62
+      y: 82
+    size:
+      x: 10
+      y: 18
+    minValue: 0
+    maxValue: 20
+    frameBackgroundColor:
+      r: 0
+      g: 0
+      b: 0
+      a: 0.100000001
+    plotBackgroundColor:
+      r: 0
+      g: 0
+      b: 0
+      a: 0.400000006
+    lineColor:
+      r: 0
+      g: 1
+      b: 0
+      a: 1
+    textColor:
+      r: 1
+      g: 1
+      b: 1
+      a: 1
+    antialiasing: true
+    showTextValue: true
+restartManager:
+  isEnabled: false
+  isRandomizeSideEnabled: false
+  restartGimmicksToDefaultOnRestart: false
+  player1RestartState:
+    positionX: 0
+    positionY: 0
+    floorZ: 0
+    playerPositionMatrix:
+      XPlane:
+        X: 0
+        Y: 0
+        Z: 0
+        W: 0
+      YPlane:
+        X: 0
+        Y: 0
+        Z: 0
+        W: 0
+      ZPlane:
+        X: 0
+        Y: 0
+        Z: 0
+        W: 0
+      WPlane:
+        X: 0
+        Y: 0
+        Z: 0
+        W: 0
+  player2RestartState:
+    positionX: 0
+    positionY: 0
+    floorZ: 0
+    playerPositionMatrix:
+      XPlane:
+        X: 0
+        Y: 0
+        Z: 0
+        W: 0
+      YPlane:
+        X: 0
+        Y: 0
+        Z: 0
+        W: 0
+      ZPlane:
+        X: 0
+        Y: 0
+        Z: 0
+        W: 0
+      WPlane:
+        X: 0
+        Y: 0
+        Z: 0
+        W: 0
+  floorRestart: 0
+  minimumRandomizedPosition:
+    - -5.49333395e+17
+    - 3.43507028e-11
+  maximumRandomizedPosition:
+    - -3.65966845e+27
+    - -2.2949655e-07
+  minimumDistance: 0
+  maximumDistance: 0
+lagManager:
+  isEnabled: true
+  improveOnlineLagEnabled: true
+  wantedNetworkLagOffline: 0
+  useCustomInputLagTable: false
+  pingTable:
+    - maximumPing: 83
+      inputLag: 0
+    - maximumPing: 117
+      inputLag: 1
+    - maximumPing: 150
+      inputLag: 1
+    - maximumPing: 183
+      inputLag: 2
+    - maximumPing: 217
+      inputLag: 3
+    - maximumPing: 232
+      inputLag: 4
+    - maximumPing: 250
+      inputLag: 5
+    - maximumPing: 267
+      inputLag: 6
+    - maximumPing: 283
+      inputLag: 8
+    - maximumPing: 4294967295
+      inputLag: 12
+fpsUnlocker:
+  isEnabled: true
+  maxFPSLimit: 75
+  interpolationEnabled: true
+  interpolationMode: 0
+resolutionManager:
+  moduleEnabled: true
+  wantedMainVideoMode:
+    Width: 1920
+    Height: 1080
+    VideoModeType: 0
+  backupVideoMode:
+    Width: 640
+    Height: 360
+    VideoModeType: 1
+  backupResolutionVideoModeType_SelectedItem: 0
+  fieldOfView: 65
+  uiBlackBarsFixCheckboxChecked: false
+Game_CustomAnimationDispatcher:
+  numberOfExtrapolationFrames: 1
+frameHistory:
+  isEnabled: false
+  freezeHistory: true
+  position:
+    x: 50
+    y: 0
+  textScale: 100
+  iconScale: 100
+  backgroundColor:
+    r: 0
+    g: 0
+    b: 0
+    a: 0.5
+  borderColor:
+    r: 0.800000012
+    g: 0.800000012
+    b: 0.800000012
+    a: 0.5
+  textColor:
+    r: 1
+    g: 1
+    b: 1
+    a: 1
+  showSeparators: false
+  showFrameIndex: true
+  showDirectionalInputs: true
+  showAttackInputs: true
+  showMoveTimer: true
+  showAttackState: false
+  showHitLinesZBounds: false
+  showHurtCylindersZBounds: false
+  showCrushing: false
+  showCancelWindow: false
+minimap:
+  isEnabled: false
+  position:
+    x: 50
+    y: 95
+  size:
+    x: 20
+    y: 20
+  backgroundColor:
+    r: 0
+    g: 0
+    b: 0
+    a: 0.5
+  borderColor:
+    r: 0.800000012
+    g: 0.800000012
+    b: 0.800000012
+    a: 0.5
+  zoom: 150
+  dynamicZoom: true
+  walls:
+    isEnabled: true
+    color:
+      r: 0
+      g: 1
+      b: 0
+      a: 1
+    thickness: 2
+  player1:
+    stickFigure:
+      isEnabled: true
+      color:
+        r: 1
+        g: 1
+        b: 1
+        a: 1
+      thickness: 2
+    direction:
+      isEnabled: true
+      color:
+        r: 1
+        g: 1
+        b: 0
+        a: 1
+      thickness: 2
+    hurtCylinders:
+      isEnabled: true
+      color:
+        r: 0.5
+        g: 0.5
+        b: 0.5
+        a: 0.5
+      thickness: 1
+    collisionSpheres:
+      isEnabled: false
+      color:
+        r: 0
+        g: 0
+        b: 1
+        a: 0.5
+      thickness: 1
+    hitLines:
+      isEnabled: true
+      color:
+        r: 1
+        g: 0
+        b: 0
+        a: 1
+      thickness: 2
+  usePlayer2: false
+  player2:
+    stickFigure:
+      isEnabled: true
+      color:
+        r: 1
+        g: 1
+        b: 1
+        a: 1
+      thickness: 2
+    direction:
+      isEnabled: true
+      color:
+        r: 1
+        g: 1
+        b: 0
+        a: 1
+      thickness: 2
+    hurtCylinders:
+      isEnabled: true
+      color:
+        r: 0.5
+        g: 0.5
+        b: 0.5
+        a: 0.5
+      thickness: 1
+    collisionSpheres:
+      isEnabled: false
+      color:
+        r: 0
+        g: 0
+        b: 1
+        a: 0.5
+      thickness: 1
+    hitLines:
+      isEnabled: true
+      color:
+        r: 1
+        g: 0
+        b: 0
+        a: 1
+      thickness: 2

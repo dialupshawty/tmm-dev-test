@@ -1,0 +1,28 @@
+tekken-mod-manager/
+├─ config/
+│  └─ config.json
+├─ node_modules/
+│  ├─ ... /
+├─ renderer/
+│  └─ assets/
+│     ├─ _Background.png
+│     └─ _Logo.png
+│  └─ src/
+│     ├─ App.jsx
+│     └─ index.jsx
+│  ├─ bundle.js
+│  ├─ home.html
+│  └─ index.html
+├─ src/
+│  ├─ installer.js
+│  ├─ scraper.cjs
+│  └─ sites.cjs
+├─ tests/
+│  ├─ test-installer.js
+│  └─ test-installer-2.js
+├─ main.cjs
+├─ package.json
+├─ package-lock.json
+├─ preload.js
+└─ vite.config.js
+

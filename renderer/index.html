@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tekken Mod Manager</title>
+</head>
+<body>
+  <h1>Tekken Mod Manager</h1>
+  <ul id="category-list"></ul>
+  <div id="mods"></div>
+
+  <script>
+    const { ipcRenderer } = require('electron');
+
+    // load categories from main process
+    async function loadCategories() {
+      const categories = await ipcRenderer.invoke('get-categories');
+      const ul = document.getElementById('category-list');
+      ul.innerHTML = '';
+      categories.forEach(cat => {
+        const li = document.createElement('li');
+        li.textContent = cat.name;
+        li.style.cursor = 'pointer';
+        li.onclick = () => loadMods(cat); // fetch mods for this category
+        ul.appendChild(li);
+      });
+    }
+
+    async function loadMods(category) {
+      const mods = await ipcRenderer.invoke('fetch-mods', category);
+      const modsDiv = document.getElementById('mods');
+      modsDiv.innerHTML = '';
+      mods.forEach(mod => {
+        const div = document.createElement('div');
+        div.innerHTML = `<h3>${mod.title}</h3><p>${mod.desc}</p><a href="${mod.downloadUrl}" target="_blank">Download</a>`;
+        modsDiv.appendChild(div);
+      });
+    }
+
+    loadCategories();
+  </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+{
+  "name": "tekken-mod-manager",
+  "version": "0.1.2",
+  "type": "commonjs",
+  "main": "main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "bundle": "npx esbuild renderer/src/index.jsx --bundle --outfile=renderer/bundle.js --loader:.jsx=jsx",
+    "dev": "concurrently \"npm:dev:vite\" \"npm:dev:electron\"",
+    "dev:vite": "vite",
+    "dev:electron": "wait-on tcp:5173 && electron .",
+    "build": "vite build && electron-builder",
+    "test": "node tests/test-installer.js && node tests/test-installer-2.js"
+  },
+  "dependencies": {
+    "auto-launch": "^5.0.6",
+    "axios": "^1.12.2",
+    "cheerio": "^1.1.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "url": "^0.11.4"
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.0",
+    "electron": "^26.6.10",
+    "electron-builder": "^24.13.3",
+    "esbuild": "^0.25.10",
+    "wait-on": "^7.0.0"
+  },
+  "description": "",
+  "directories": {
+    "test": "tests"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
