@@ -1,6 +1,52 @@
-node_module/
-config/
+# os junk
 .DS_Store
-#BACKUPS/
-#STUFF/
-Tekken Overlay/
+Thumbs.db
+
+# editors
+.vscode/
+.idea/
+
+# deps + builds
+node_modules/
+dist/
+out/
+build/
+release/
+tmp/
+temp/
+.cache/
+.nyc_output/
+coverage/
+*.log
+logs/
+*.pid
+*.seed
+*.tgz
+
+# env & config (keep .env.local if u want)
+.env
+.env.*
+!.env.example
+
+# electron outputs
+*.asar
+*.exe
+*.dll
+*.dmg
+*.app
+*.deb
+*.rpm
+*.snap
+*.msi
+*.pkg
+*.icns
+*.ico
+
+# local-only stuff (ur folders)
+\#BACKUPS/
+\#STUFF/
+
+# misc
+*.map
+*.bak
+*.orig
