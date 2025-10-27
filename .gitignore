@@ -1,3 +1,6 @@
 node_module/
 config/
 .DS_Store
+#BACKUPS/
+#STUFF/
+Tekken Overlay/
