@@ -12,6 +12,10 @@ const { app, BrowserWindow, ipcMain, dialog } = require('electron');
 const path = require('path');
 const { spawn } = require('child_process');
 const fs = require('fs');
+const DEFAULT_MODS_PATH = path.join(
+  process.env.ProgramFiles || 'C:\\Program Files',
+  '..', // up one; we will replace with SteamLibrary root below if config not set
+);
 const { parseGeneric } = require('./src/scraper.cjs');
 const sites = require('./src/sites.cjs');
 const AutoLaunch = require('auto-launch');
@@ -79,6 +83,30 @@ function saveTekkenPath(newPath) {
   }
 }
 
+function getConfigJSON() {
+  try {
+    const cfgPath = path.join(__dirname, 'config', 'config.json');
+    if (fs.existsSync(cfgPath)) {
+      return JSON.parse(fs.readFileSync(cfgPath, 'utf-8'));
+    }
+  } catch (e) {
+    console.error('Failed reading config.json:', e);
+  }
+  return {};
+}
+
+function getModsRootPath() {
+  const cfg = getConfigJSON();
+  if (cfg.modsPath && fs.existsSync(cfg.modsPath)) return cfg.modsPath;
+
+  // Fallback to default Tekken 8 Steam path:
+  const fallback = path.join(
+    process.env.STEAMLIBRARY || 'G:\\SteamLibrary',
+    'steamapps', 'common', 'TEKKEN 8', 'Polaris', 'Content', 'Paks', 'mods'
+  );
+  return fallback;
+}
+
 // --- IPC HANDLERS ---
 ipcMain.handle('get-sites', async () => sites.map(s => ({ name: s.name, categories: s.categories })));
 ipcMain.handle('get-categories', () => sites.flatMap(site => site.categories.map(cat => ({ ...cat, site: site.url, siteName: site.name }))));
@@ -88,6 +116,23 @@ ipcMain.handle('fetch-mods', async (category) => {
   const mods = await parseGeneric({ url: site.url + category.path });
   mods.forEach(m => { m.category = category.name; m.site = site.name; });
   return mods;
+});
+
+ipcMain.handle('list-installed-mods', async () => {
+  const modsDir = getModsRootPath();
+  try {
+    if (!fs.existsSync(modsDir)) {
+      return { modsDir, items: [], error: `Mods directory not found: ${modsDir}` };
+    }
+    const entries = fs.readdirSync(modsDir, { withFileTypes: true });
+    const folders = entries
+      .filter(d => d.isDirectory())
+      .map(d => d.name)
+      .sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }));
+    return { modsDir, items: folders, error: null };
+  } catch (err) {
+    return { modsDir, items: [], error: err.message || String(err) };
+  }
 });
 
 // --- Mods Folder Path ---
