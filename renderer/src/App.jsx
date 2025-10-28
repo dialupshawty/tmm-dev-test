@@ -26,7 +26,7 @@ const TekkenApp = () => {
   };
 
   return (
-    <div style={{ padding: 20, height: '100vh', boxSizing: 'border-box', display: 'flex', flexDirection: 'column' }}>
+    <div style={{ padding: 20 }}>
       <h2>Tekken Mod Manager</h2>
       <div>
         <button onClick={chooseGame}>Choose Game Folder</button>
@@ -40,35 +40,15 @@ const TekkenApp = () => {
         </div>
       </div>
 
-      <div style={{ marginTop: 20, flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }}>
+      <div style={{ marginTop: 20 }}>
         <h3>Mods</h3>
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
-            gap: 12,
-            overflowY: 'auto',
-            paddingRight: 8,
-            flex: 1,
-            minHeight: 0,
-          }}
-        >
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12 }}>
           {mods.map((m, i) => (
-            <div
-              key={i}
-              style={{
-                border: '1px solid #ddd',
-                padding: 10,
-                display: 'flex',
-                flexDirection: 'column',
-                gap: 8,
-                minWidth: 0,
-              }}
-            >
+            <div key={i} style={{ border: '1px solid #ddd', padding: 10 }}>
               <img src={m.thumbnail || ''} alt="thumb" style={{ width: '100%', height: 120, objectFit: 'cover' }} />
-              <h4 style={{ margin: 0, wordBreak: 'break-word', overflowWrap: 'anywhere' }}>{m.title}</h4>
-              <p style={{ margin: 0, wordBreak: 'break-word', overflowWrap: 'anywhere', flex: 1 }}>{m.desc}</p>
-              <div style={{ display: 'flex', justifyContent: 'space-between', gap: 8 }}>
+              <h4>{m.title}</h4>
+              <p>{m.desc}</p>
+              <div>
                 <button onClick={() => install(m)}>Install</button>
                 <a href={m.downloadUrl} target="_blank" rel="noreferrer">Open</a>
               </div>
