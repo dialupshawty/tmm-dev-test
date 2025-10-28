@@ -334,6 +334,9 @@
       };
 
       document.getElementById('mods-btn').onclick = () => {
+        if (api && api.listInstalledMods) {
+          return;
+        }
         glassPlate.style.display = 'none';
         modsPlate.style.display = 'flex';
       };
@@ -354,7 +357,7 @@
       });
     } else {
       document.getElementById('start-btn').onclick = () => alert('Electron environment not detected. Running in browser mode.');
-    }
+  }
 
     /* --- Mods button function
       if (modsBtn) {
@@ -380,6 +383,75 @@
       }
     });
   } */
+
+    const modsBtn = document.getElementById('mods-btn');
+    const glass = document.getElementById('glass-plate');
+
+    function renderModsPlate(data) {
+      const { modsDir, items, error } = data || {};
+      const html = `
+        <div id="mods-plate" style="
+          display:flex;flex-direction:column;align-items:center;
+          padding:70px 120px;border-radius:28px;
+          background:rgba(255,255,255,0.08);
+          border:1px solid rgba(255,255,255,0.25);
+          backdrop-filter:blur(10px) saturate(150%) contrast(105%);
+          -webkit-backdrop-filter:blur(10px) saturate(150%) contrast(105%);
+          box-shadow:0 10px 40px rgba(0,0,0,0.9);
+          text-align:center;position:relative;min-width:720px;max-width:90vw;
+        ">
+          <h2 style="margin:0 0 16px 0;letter-spacing:1px;">Installed Mods</h2>
+          <div style="opacity:0.8;font-size:12px;margin-bottom:18px;">
+            Directory: <code>${modsDir || 'unknown'}</code>
+          </div>
+
+          ${error ? `<div style="color:#ffb3b3;margin-bottom:16px;">${error}</div>` : ''}
+
+          <div id="mods-grid" style="
+            display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+            gap:14px; width:100%; max-width:960px;
+          ">
+            ${
+              (items && items.length)
+                ? items.map(name => `
+                    <div style="
+                      padding:14px;border-radius:16px;
+                      background:rgba(255,255,255,0.07);
+                      border:1px solid rgba(255,255,255,0.18);
+                      backdrop-filter:blur(6px);
+                      text-align:left;
+                    ">
+                      <div style="font-weight:700;letter-spacing:0.3px">${name}</div>
+                    </div>
+                  `).join('')
+                : `<div style="grid-column:1/-1;opacity:0.8;">No mod folders found.</div>`
+            }
+          </div>
+
+          <div style="margin-top:24px;display:flex;gap:12px;">
+            <button id="mods-back-btn" class="glass-btn small">BACK</button>
+          </div>
+        </div>
+      `;
+      glass.innerHTML = html;
+
+      // Back button restores the original home view by reloading the page
+      const backBtn = document.getElementById('mods-back-btn');
+      backBtn?.addEventListener('click', () => window.location.reload());
+    }
+
+    modsBtn?.addEventListener('click', async () => {
+      try {
+        if (!window.electronAPI || !window.electronAPI.listInstalledMods) {
+          alert('IPC not available (electronAPI.listInstalledMods missing).');
+          return;
+        }
+        const data = await window.electronAPI.listInstalledMods();
+        renderModsPlate(data);
+      } catch (err) {
+        renderModsPlate({ modsDir: '', items: [], error: err.message || String(err) });
+      }
+    });
   </script>
 </body>
 </html>

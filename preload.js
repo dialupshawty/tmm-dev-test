@@ -7,6 +7,7 @@ contextBridge.exposeInMainWorld('electronAPI', {
   chooseFolder: () => ipcRenderer.invoke('choose-folder'),
   listBackups: () => ipcRenderer.invoke('list-backups'),
 
+  listInstalledMods: () => ipcRenderer.invoke('list-installed-mods'),
   // New API for your Home HTML
   launchGame: () => ipcRenderer.send('launch-game'),
   getStartupEnabled: () => ipcRenderer.invoke('get-startup-enabled'),
